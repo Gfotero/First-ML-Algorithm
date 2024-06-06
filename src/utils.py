@@ -11,3 +11,12 @@ def db_connect():
     engine = create_engine(os.getenv('DATABASE_URL'))
     engine.connect()
     return engine
+
+import os
+import requests
+url='http xxxxxxxxxxxxxx '
+path=os.path.join(os.getcwd(),'example1.txt')
+r=requests.get(url)
+data=r.text
+with open(path,'wb') as f:
+    f.write(r.content)
